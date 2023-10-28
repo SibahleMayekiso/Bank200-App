@@ -5,8 +5,22 @@ namespace Bank200_BackendDeveloper_PracticalTest.Services
 {
     public abstract class AccountService: IAccountService
     {
-        //During Refactoring add default implementation here since Savings and Currnet accounts have the same Deposit logic
-        public abstract void Deposit(long accountId, int amountToDeposit);
+        private ISystemDB _systemDB;
+
+        protected AccountService(ISystemDB systemDB)
+        {
+            _systemDB = systemDB;
+        }
+
+        public virtual void Deposit(long accountId, int amountToDeposit)
+        {
+            if (!_systemDB.Accounts.ContainsKey(accountId))
+            {
+                throw new AccountNotFoundException("Account could not be found. Ensure the account id you entered is correct.");
+            }
+
+            _systemDB.Accounts[accountId].Balance += amountToDeposit;
+        }
 
         //OpenCurrentAccount not implementeted becuase it is stated that we will only implement the “withdraw” and “deposit” functionality.
         public virtual void OpenCurrentAccount(long accountId)

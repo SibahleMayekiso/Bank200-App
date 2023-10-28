@@ -6,19 +6,9 @@ namespace Bank200_BackendDeveloper_PracticalTest.Services
     {
         private ISystemDB _systemDB;
 
-        public SavingsAccount(ISystemDB systemDB)
+        public SavingsAccount(ISystemDB systemDB) : base(systemDB)
         {
             _systemDB = systemDB;
-        }
-
-        public override void Deposit(long accountId, int amountToDeposit)
-        {
-            if (!_systemDB.Accounts.ContainsKey(accountId))
-            {
-                throw new AccountNotFoundException("Account could not be found. Ensure the account id you entered is correct.");
-            }
-
-            _systemDB.Accounts[accountId].Balance += amountToDeposit;
         }
 
         public override void Withdraw(long accountId, int amountToWithdraw)
