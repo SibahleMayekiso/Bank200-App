@@ -1,6 +1,6 @@
 ﻿using Bank200_BackendDeveloper_PracticalTest.Models;
 
-namespace Bank200_BackendDeveloper_PracticalTest.DataContext
+namespace Bank200_BackendDeveloper_PracticalTest.DataContext.Interfaces
 {
     public interface ISystemDB
     {

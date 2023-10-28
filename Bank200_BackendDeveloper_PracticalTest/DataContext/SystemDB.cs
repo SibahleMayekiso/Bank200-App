@@ -1,10 +1,11 @@
-﻿using Bank200_BackendDeveloper_PracticalTest.Models;
+﻿using Bank200_BackendDeveloper_PracticalTest.DataContext.Interfaces;
+using Bank200_BackendDeveloper_PracticalTest.Models;
 
 namespace Bank200_BackendDeveloper_PracticalTest.DataContext
 {
     public sealed class SystemDB: ISystemDB
     {
-        private static SystemDB _instance;
+        private static SystemDB? _instance;
         private static readonly object _instanceLock = new object();
 
         public Dictionary<long, Account> Accounts { get; private set; }

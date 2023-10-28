@@ -1,4 +1,5 @@
 using Bank200_BackendDeveloper_PracticalTest.DataContext;
+using Bank200_BackendDeveloper_PracticalTest.DataContext.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,6 +1,6 @@
-﻿namespace Bank200_BackendDeveloper_PracticalTest.Services
+﻿namespace Bank200_BackendDeveloper_PracticalTest.Services.Exceptions
 {
-    public class WithdrawalAmountTooLargeException: Exception
+    public class WithdrawalAmountTooLargeException : Exception
     {
         public WithdrawalAmountTooLargeException() { }
 

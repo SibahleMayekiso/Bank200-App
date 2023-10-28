@@ -1,11 +1,12 @@
-﻿using Bank200_BackendDeveloper_PracticalTest.DataContext;
+﻿using Bank200_BackendDeveloper_PracticalTest.DataContext.Interfaces;
+using Bank200_BackendDeveloper_PracticalTest.Services.Exceptions;
 using Bank200_BackendDeveloper_PracticalTest.Services.Interfaces;
 
 namespace Bank200_BackendDeveloper_PracticalTest.Services
 {
     public abstract class AccountService: IAccountService
     {
-        private ISystemDB _systemDB;
+        private readonly ISystemDB _systemDB;
 
         protected AccountService(ISystemDB systemDB)
         {

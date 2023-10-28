@@ -1,11 +1,12 @@
-﻿using Bank200_BackendDeveloper_PracticalTest.DataContext;
+﻿using Bank200_BackendDeveloper_PracticalTest.DataContext.Interfaces;
 using Bank200_BackendDeveloper_PracticalTest.Models;
+using Bank200_BackendDeveloper_PracticalTest.Services.Exceptions;
 
 namespace Bank200_BackendDeveloper_PracticalTest.Services
 {
     public class CurrentAccount: AccountService
     {
-        private ISystemDB _systemDB;
+        private readonly ISystemDB _systemDB;
 
         public CurrentAccount(ISystemDB systemDB) : base(systemDB)
         {
